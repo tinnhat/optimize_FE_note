@@ -1,0 +1,18 @@
+- FOUC(Flash of Unstyled Content) -> tức là hiển thị nội dung với style mặc định
+- tag script không chứa thuộc tính async, defer sẽ được coi là parser blocking
+
+- Tối ưu:
+    + Code split: Dynamic import, Component(lazy load)
+    + Tree shaking: check hỗ trợ ở trang bundlephobia.Component
+VD: hiện tại đang sử dụng lodash và dùng kiểu import { cloneDeep } from "lodash" -> sau khi sửa import cloneDeep  from "lodash/cloneDeep";
+~ giảm khoảng 5 lần (Check hình lodash)
+
+- Lazy loading:
+  + native lazy loading: dungf thuộc tính mặc định của image loading=lazy
+  + intersection observer: tự quy định được khi nào load element(image/api,...) (tự config bằng js)
+- Async/Defer: nếu có nhiều defer thì sẽ thực thi theo thứ tự (mặc dù khi tải là tải song song)
+
+- Preload/Prefetch:
+  + thẻ link rel="preload" -> báo cho trình duyệt là tài nguyên qtrong cần phải tải trước
+- Preconnect/DNS-prefetch (ưu tiên kết nối tài nguyên nào trước)
+- Critical/Non-critical: ưu tiên tải file code cần trước và lazy file code chưa cần
