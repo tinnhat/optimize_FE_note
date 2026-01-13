@@ -16,3 +16,6 @@ VD: hiện tại đang sử dụng lodash và dùng kiểu import { cloneDeep } 
   + thẻ link rel="preload" -> báo cho trình duyệt là tài nguyên qtrong cần phải tải trước
 - Preconnect/DNS-prefetch (ưu tiên kết nối tài nguyên nào trước)
 - Critical/Non-critical: ưu tiên tải file code cần trước và lazy file code chưa cần
+
+- even loop: call stack > microtask queue > macrotask queue
+- Split long task/ web worker
